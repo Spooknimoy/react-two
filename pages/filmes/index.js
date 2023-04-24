@@ -7,40 +7,39 @@ import { Button, Card, Col, Row } from 'react-bootstrap'
 
 const index = (props) => {
 
-  
 
-            
+
+
   return (
     <>
       <Pagina titulo='filmes'>
-      <Row md={4}>
-
- 
-             
-{props.filmes.map(item => (
-    
-
-    <Col>
-<Card >
-    <Card.Img variant="top" src= { 'https://image.tmdb.org/t/p/w500'+ item.poster_path}/>
-    <Card.Body>
-        <Card.Title>{item.Title}</Card.Title>
-       <p>Lançamento: {item.release_date}</p>
-       <p>Popular: {item.vote_average}</p>
-       <p>Lançamento</p>
-       <p>Lançamento</p>
-       <Link className='btn btn-dark' href={'/filmes/' +item.id}> Detalhes</Link>
-       
-       
-    </Card.Body>
-</Card>
+        <Row md={4}>
 
 
-</Col>
+
+          {props.filmes.map(item => (
 
 
-))}
-</Row>
+            <Col>
+              <Card >
+                <Card.Img variant="top" src={'https://image.tmdb.org/t/p/w500' + item.poster_path} />
+                <Card.Body>
+                  <Card.Title>{item.Title}</Card.Title>
+                  <p>Lançamento: {item.release_date}</p>
+                  <p>Popular: {item.vote_average}</p>
+                  <Link className='btn btn-dark' href={'/filmes/' + item.id}> Detalhes</Link>
+
+
+                </Card.Body>
+              </Card>
+
+
+            </Col>   
+
+              
+
+          ))}
+        </Row>
       </Pagina>
 
     </>
