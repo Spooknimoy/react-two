@@ -23,49 +23,9 @@ const Detalhes = ({ filme, atores }) => {
 
           </Col>
 
-
-
-          <Col md={9}>
-
-            <strong><p> Data do filme: {filme.release_date}</p>
-              <p> Orçamento: {filme.budget}</p>
-              <p> Duração: {filme.budget}</p>
-
-              <p>Nota: {filme.vote_average}</p>
-              <div>
-                <strong>Generos: </strong>
-                <ul>
-                  {filme.genres.map(item => (
-                    <li>{item.name}</li>
-                  ))}
-                </ul>
-              </div>
-            </strong>
-            <strong><p>Sobre o Filmes:</p> </strong>
-
-            <p>{filme.overview}</p>
-
-
-          </Col>
-        </Row>
-
-        <h1>Atores</h1>
-
-        <Row>
-
-          {atores.map(item => (
-            <Col className='mb-3' md={2} title={item.name}>
-              <Link href={'/filmes/atores/' + item.id}>
-              
-                  <Card.Img variant="top" src={'https://image.tmdb.org/t/p/w500' + item.profile_path} />
-                
-              </Link>
-            </Col>
-          ))}
-
-
-        </Row>
-
+          </Row>
+           
+        <Galeria titulo="Filmes que atuou" lista={filmes} fotos="poster_path" />
       </Pagina>
     </>
   )
